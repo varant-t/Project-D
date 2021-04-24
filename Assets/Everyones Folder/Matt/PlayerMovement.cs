@@ -17,11 +17,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject cam;
     [SerializeField] private float angleView;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
         Cursor.visible = false;
+        Screen.lockCursor = true;
     }
 
     // Update is called once per frame
@@ -38,8 +41,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Basic Camera
-        float camHorizontal = Input.GetAxis("Mouse X") * camSpeed * Time.deltaTime;
-        float camVertical = Input.GetAxis("Mouse Y") * camSpeed * Time.deltaTime;
+        float camHorizontal = Input.GetAxis("Mouse X") * camSpeed;
+        float camVertical = Input.GetAxis("Mouse Y") * camSpeed;
         transform.Rotate(0, camHorizontal, 0);
         if (camVertical > 0)
         {
@@ -59,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-            cam.transform.Rotate(-camVertical, 0, 0);
+        cam.transform.Rotate(-camVertical, 0, 0);
         
     }
     private void FixedUpdate()
@@ -77,5 +80,9 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+    }
+    public bool IsGrounded()
+    {
+        return isGrounded;
     }
 }
