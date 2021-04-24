@@ -12,10 +12,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int jumpForce;
     private bool isGrounded;
 
+    [Header("Camera Variables")]
+    [SerializeField] private float camSpeed;
+    [SerializeField] private GameObject cam;
+    [SerializeField] private float angleView;
+
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -23,28 +29,53 @@ public class PlayerMovement : MonoBehaviour
     {
         //Debug.Log("Vertical " + Input.GetAxis("Vertical"));
         //Debug.Log("Horizontal " + Input.GetAxis("Horizontal"));
-
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 1.5f);
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Debug.Log("Jump");
             playerRB.velocity = Vector3.zero;
             playerRB.AddForce(Vector3.up * jumpForce);
         }
 
+        //Basic Camera
+        float camHorizontal = Input.GetAxis("Mouse X") * camSpeed * Time.deltaTime;
+        float camVertical = Input.GetAxis("Mouse Y") * camSpeed * Time.deltaTime;
+        transform.Rotate(0, camHorizontal, 0);
+        if (camVertical > 0)
+        {
+            //Debug.Log("Positive");
+            //90-270 degrees
+            if (cam.transform.eulerAngles.x < 270 + angleView && cam.transform.eulerAngles.x > 90)
+            {
+                camVertical = 0;
+            }
+        }
+        else if (camVertical < 0)
+        {
+            //Debug.Log("Negative");
+            if (cam.transform.eulerAngles.x > 90 - angleView && cam.transform.eulerAngles.x < 270)
+            {
+                camVertical = 0;
+            }
+        }
+
+            cam.transform.Rotate(-camVertical, 0, 0);
+        
     }
     private void FixedUpdate()
     {
+        //Basic Movement
         //Forward and Back Movement
-        float moveFor = Input.GetAxis("Vertical");
+        float moveFor = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         //Left and Right Side Movement
-        float moveSide = Input.GetAxis("Horizontal");
+        float moveSide = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        //Debug.Log(transform.TransformDirection(transform.forward));
+        playerRB.velocity = transform.TransformDirection(moveSide, playerRB.velocity.y, moveFor);
 
-        float camHorizontal = Input.GetAxis("Mouse X");
-        float camVertical = Input.GetAxis("Mouse Y");
+        //transform.Translate(moveSide, 0, moveFor);
 
-        //transform.rotation.y += camHorizontal;
-        playerRB.velocity = new Vector3(moveSide * speed, playerRB.velocity.y, moveFor * speed);
 
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 1f);
+
+
     }
 }
