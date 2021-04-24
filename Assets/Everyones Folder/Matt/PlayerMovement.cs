@@ -77,9 +77,6 @@ public class PlayerMovement : MonoBehaviour
 
         //transform.Translate(moveSide, 0, moveFor);
 
-
-
-
     }
     public bool IsGrounded()
     {
