@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Debug.Log("Vertical " + Input.GetAxis("Vertical"));
         //Debug.Log("Horizontal " + Input.GetAxis("Horizontal"));
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 1.5f);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 2f);
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Debug.Log("Jump");
