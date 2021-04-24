@@ -21,9 +21,13 @@ public class Item : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && !playerItemScript.GetHasItem())
         {
-            transform.position = holdObject.position;
+            playerItemScript.GrabItem();
             transform.parent = holdObject;
-            playerItemScript.SetHasItem(true);
         }
+    }
+    public void PickupItem()
+    {
+        transform.position = holdObject.position;
+        playerItemScript.SetHasItem(true);
     }
 }

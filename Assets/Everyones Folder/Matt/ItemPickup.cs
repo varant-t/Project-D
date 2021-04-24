@@ -10,10 +10,12 @@ public class ItemPickup : MonoBehaviour
     private Item heldItemScript;
     //If pedestal is moused over / correct item will not drop item
     private bool allowDropping = true;
+    private bool allowPickup = false;
+    Animator playerAnim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,8 +29,7 @@ public class ItemPickup : MonoBehaviour
         if(hasItem && Input.GetKeyDown(KeyCode.Q) && transform.GetComponent<PlayerMovement>().IsGrounded() && allowDropping)
         {
             Debug.Log("Drop Item");
-            PlaceItem(new Vector3(0, -1.4f, 0));
-            hasItem = false;
+            playerAnim.SetTrigger("dropItem");
         }
     }
     public void SetHasItem(bool carryingItem)
@@ -47,14 +48,38 @@ public class ItemPickup : MonoBehaviour
     {
         allowDropping = allow;
     }
+    //For placing items on ground
     public void PlaceItem(Vector3 itemDestination)
     {
-        holdObject.transform.Find("Item").transform.localPosition = itemDestination;
+        holdObject.transform.Find("Item").transform.position = itemDestination;
         holdObject.transform.Find("Item").parent = null;
     }
+    //For placing items on pedestal
     public void PlaceItem(Transform itemDestination)
     {
         holdObject.transform.Find("Item").transform.position = itemDestination.position;
         holdObject.transform.Find("Item").parent = null;
+    }
+    public void PickupItem()
+    {
+        allowPickup = true;
+        holdObject.transform.Find("Item").GetComponent<Item>().PickupItem();
+        Invoke("StopPickupItem", 0.1f);
+        Debug.Log("PickupItem");
+    }
+    private void StopPickupItem()
+    {
+        allowPickup = false;
+    }
+
+    public void GrabItem()
+    {
+        playerAnim.SetTrigger("grabItem");
+    }
+
+    public void EventPlaceItem()
+    {
+        PlaceItem(new Vector3(0, .6f, 0));
+        hasItem = false;
     }
 }

@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject cam;
     [SerializeField] private float angleView;
 
-
-
+    [Header("Anim")]
+    [SerializeField] private GameObject arms;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Tried this to fix warping scale
+        //arms.transform.localScale = new Vector3(1, 1, 1);
+        //arms.transform.position = cam.transform.position;
+        //arms.transform.rotation = cam.transform.rotation;
+
         //Debug.Log("Vertical " + Input.GetAxis("Vertical"));
         //Debug.Log("Horizontal " + Input.GetAxis("Horizontal"));
         isGrounded = Physics.Raycast(transform.position, Vector3.down, 2f);
@@ -74,7 +79,6 @@ public class PlayerMovement : MonoBehaviour
         float moveSide = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         //Debug.Log(transform.TransformDirection(transform.forward));
         playerRB.velocity = transform.TransformDirection(moveSide, playerRB.velocity.y, moveFor);
-
         //transform.Translate(moveSide, 0, moveFor);
 
     }
