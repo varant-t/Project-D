@@ -24,8 +24,8 @@ public class AcceptItem : MonoBehaviour
         playerItemScript.AllowDroppingItems(false);
         if (playerItemScript.GetHeldObject().CompareTag("Item") && Input.GetKeyDown(KeyCode.Q))
         {
-            playerItemScript.PlaceItem(itemPlace);
-            playerItemScript.SetHasItem(false);
+            //playerItemScript.PlaceItem(itemPlace);
+            //playerItemScript.SetHasItem(false);
             itemAccepted = true;
         }
     }
