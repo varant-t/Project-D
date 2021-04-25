@@ -7,18 +7,15 @@ public class Chest : MonoBehaviour
     [SerializeField] private bool openChest = false;
     private GameObject player;
     private ItemDisplayText displayTextScript;
+    private Animator animChest;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         displayTextScript = GetComponent<ItemDisplayText>();
+        animChest = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnMouseOver()
     {
         if (Vector3.Distance(transform.position, player.transform.position) < 5)
@@ -27,6 +24,7 @@ public class Chest : MonoBehaviour
             {
                 openChest = true;
                 displayTextScript.SetEnabled(false);
+                animChest.SetTrigger("openChest");
             }
         }
     }

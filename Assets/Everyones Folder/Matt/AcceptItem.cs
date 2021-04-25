@@ -30,7 +30,7 @@ public class AcceptItem : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, player.transform.position) < 5)
         {
-            if(playerItemScript.GetHasItem() == false)
+            if(playerItemScript.GetHasItem() == false || itemAccepted)
             {
                 displayTextScript.SetEnabled(false);
             }
@@ -44,7 +44,15 @@ public class AcceptItem : MonoBehaviour
                     playerItemScript.GetItemPlace(itemPlace);
                     playerItemScript.TriggerAnimPlace();
                     itemAccepted = true;
-                    doorManagerScript.CheckWinCondition();
+                    if(doorManagerScript != null)
+                    {
+                        doorManagerScript.CheckWinCondition();
+                    }
+                    else
+                    {
+                        Debug.Log(gameObject.name + " is missing door reference");
+                    }
+
                 }
             }
 
