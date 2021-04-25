@@ -38,7 +38,7 @@ public class AcceptItem : MonoBehaviour
             {
                 displayTextScript.SetEnabled(true);
                 playerItemScript.AllowDroppingItems(false);
-                if (playerItemScript.GetHeldObject().CompareTag("Item") && Input.GetKeyDown(KeyCode.Q))
+                if (playerItemScript.GetHeldObject() != null && Input.GetKeyDown(KeyCode.Q))
                 {
                     playerItemScript.DisableItemOnPedestal();
                     playerItemScript.GetItemPlace(itemPlace);

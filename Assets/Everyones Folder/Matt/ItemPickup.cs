@@ -6,7 +6,7 @@ public class ItemPickup : MonoBehaviour
 {
     [SerializeField] private bool hasItem = false;
     [SerializeField] private GameObject holdObject;
-    private GameObject heldObject;
+    [SerializeField] private GameObject heldObject;
     private Item heldItemScript;
     //If pedestal is moused over / correct item will not drop item
     private bool allowDropping = true;
@@ -26,7 +26,7 @@ public class ItemPickup : MonoBehaviour
         //Debug.Log(allowDropping);
         if (hasItem)
         {
-            heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item").transform.name).gameObject;
+            //heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item1").transform.name).gameObject;
         }
         if(hasItem && Input.GetKeyDown(KeyCode.Q) && transform.GetComponent<PlayerMovement>().IsGrounded() && allowDropping)
         {
@@ -54,7 +54,7 @@ public class ItemPickup : MonoBehaviour
     //For placing items on ground
     public void PlaceItem(Vector3 itemDestination)
     {
-        Transform item = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item").transform.name);
+        Transform item = heldObject.transform;
         //Transform item = holdObject.transform.Find("Item");
         item.transform.position = itemDestination;
         item.parent = null;
@@ -64,7 +64,7 @@ public class ItemPickup : MonoBehaviour
     public void PlaceItem(Transform itemDestination)
     {
         //Transform item = holdObject.transform.Find("Item");
-        Transform item = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item").transform.name);
+        Transform item = heldObject.transform;
         item.transform.position = itemDestination.position;
         item.parent = null;
         item.localScale = new Vector3(.25f, .25f, .25f);
@@ -72,7 +72,9 @@ public class ItemPickup : MonoBehaviour
     public void PickupItem()
     {
         allowPickup = true;
-        holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item").transform.name).GetComponent<Item>().PickupItem();
+        //heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item1").transform.name).gameObject;
+        SetHeldObject();
+        heldObject.GetComponent<Item>().PickupItem();
         Invoke("StopPickupItem", 0.1f);
         //Debug.Log("PickupItem");
     }
@@ -108,6 +110,38 @@ public class ItemPickup : MonoBehaviour
 
     public void DisableItemOnPedestal()
     {
-        holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item").transform.name).GetComponent<Item>().SetIsPlaced();
+        heldObject.GetComponent<Item>().SetIsPlaced();
+    }
+
+
+    private void SetHeldObject()
+    {
+        heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item1").transform.name).gameObject;
+        if(heldObject == null)
+        {
+            heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item2").transform.name).gameObject;
+            if(heldObject == null)
+            {
+                heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item3").transform.name).gameObject;
+                if(heldObject == null)
+                {
+                    heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item4").transform.name).gameObject;
+                    if(heldObject == null)
+                    {
+                        heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item5").transform.name).gameObject;
+                        if(heldObject == null)
+                        {
+                            heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item6").transform.name).gameObject;
+                        }
+                        
+                    }
+
+                }
+
+            }
+
+        }
+
+
     }
 }

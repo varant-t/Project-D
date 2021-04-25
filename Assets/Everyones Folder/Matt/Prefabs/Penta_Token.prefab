@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8569647134141704265}
   m_Layer: 0
   m_Name: Penta_Token
-  m_TagString: Untagged
+  m_TagString: Item3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

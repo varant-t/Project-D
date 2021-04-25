@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5375887773273816679}
   m_Layer: 0
   m_Name: Pure_Token
-  m_TagString: Untagged
+  m_TagString: Item4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
