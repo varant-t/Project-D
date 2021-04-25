@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6655149444258477491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1754394, y: -0.19764818, z: 2.3264992}
+  m_LocalPosition: {x: 0.678, y: 0.027, z: -0.614}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4856482544936770197}
@@ -140,12 +140,12 @@ GameObject:
   - component: {fileID: 9023817572364208121}
   - component: {fileID: 9023817572364208120}
   - component: {fileID: 9023817572364208123}
-  - component: {fileID: 9023817572364208122}
   - component: {fileID: 9023817572364208103}
   - component: {fileID: 9023817572364208102}
   - component: {fileID: 9023817572364208100}
   - component: {fileID: 8898842029699815843}
   - component: {fileID: 2735898932349008475}
+  - component: {fileID: 1014241636}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -218,20 +218,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &9023817572364208122
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9023817572364208125}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &9023817572364208103
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -311,6 +297,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1014241636
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023817572364208125}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9023817573975625528
 GameObject:
   m_ObjectHideFlags: 0

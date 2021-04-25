@@ -19,9 +19,11 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Anim")]
     [SerializeField] private GameObject arms;
+    Animator playerAnim;
     // Start is called before the first frame update
     void Start()
     {
+        playerAnim = GetComponent<Animator>();
         playerRB = GetComponent<Rigidbody>();
         Cursor.visible = false;
         Screen.lockCursor = true;
@@ -79,6 +81,14 @@ public class PlayerMovement : MonoBehaviour
         float moveSide = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         //Debug.Log(transform.TransformDirection(transform.forward));
         playerRB.velocity = transform.TransformDirection(moveSide, playerRB.velocity.y, moveFor);
+        if(playerRB.velocity.x != 0 || playerRB.velocity.z != 0)
+        {
+            playerAnim.SetInteger("Speed", 1);
+        }
+        else
+        {
+            playerAnim.SetInteger("Speed", 0);
+        }
         //transform.Translate(moveSide, 0, moveFor);
 
     }
