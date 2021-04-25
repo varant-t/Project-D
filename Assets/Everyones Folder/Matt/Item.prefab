@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 702143150}
   - component: {fileID: 4779544799600620224}
   - component: {fileID: 3697698317555623908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Item
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2296831253156882494}
   - component: {fileID: 4590905551161816605}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TriggerBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

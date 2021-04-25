@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 4876461757482916159}
   - component: {fileID: 41346972288056949}
   - component: {fileID: 1570910738876197140}
+  - component: {fileID: 1815472474}
+  - component: {fileID: 1815472477}
+  - component: {fileID: 1815472478}
   m_Layer: 0
   m_Name: Chest_Lid
   m_TagString: Untagged
@@ -95,6 +98,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9616508, y: 0.42092234, z: 0.098188944}
   m_Center: {x: 0.0000075400367, y: -0.21034274, z: 0.04907572}
+--- !u!95 &1815472474
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141116384119261411}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3959b6aed7bd74649949120319837aec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1815472477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141116384119261411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d7d7c185727ac498c16068ecf60caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textToDisplay: Press E to open
+--- !u!114 &1815472478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141116384119261411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b8360e044332f4c843100a4a99f7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openChest: 0
 --- !u!1 &2379610517798177790
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +240,7 @@ GameObject:
   - component: {fileID: 1570910738853526288}
   - component: {fileID: 1570910738853526289}
   m_Layer: 0
-  m_Name: SM_Chest
+  m_Name: Chestt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
