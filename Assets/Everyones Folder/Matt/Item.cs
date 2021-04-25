@@ -9,12 +9,16 @@ public class Item : MonoBehaviour
     private ItemPickup playerItemScript;
     private bool isPlaced = false;
     private ItemDisplayText displayTextScript;
+    private Rigidbody itemRB;
+    [SerializeField] private BoxCollider itemCol;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerItemScript = player.GetComponent<ItemPickup>();
         displayTextScript = GetComponent<ItemDisplayText>();
+        itemRB = GetComponent<Rigidbody>();
+        itemCol = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -28,6 +32,7 @@ public class Item : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && !playerItemScript.GetHasItem())
             {
+                CollisionOff(true);
                 playerItemScript.GrabItem();
                 transform.parent = holdObject;
             }
@@ -43,5 +48,11 @@ public class Item : MonoBehaviour
     {
         isPlaced = true;
         displayTextScript.SetEnabled(false);
+    }
+    public void CollisionOff(bool on)
+    {
+        itemRB.isKinematic = on;
+        itemCol.isTrigger = on;
+        Debug.Log("Collision " + on);
     }
 }

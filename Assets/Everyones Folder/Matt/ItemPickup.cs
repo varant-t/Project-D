@@ -23,15 +23,16 @@ public class ItemPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(allowDropping);
+        //Debug.Log(allowDropping);
         if (hasItem)
         {
             heldObject = holdObject.transform.Find("Item").gameObject;
         }
         if(hasItem && Input.GetKeyDown(KeyCode.Q) && transform.GetComponent<PlayerMovement>().IsGrounded() && allowDropping)
         {
-            Debug.Log("Drop Item");
+            //Debug.Log("Drop Item");
             playerAnim.SetTrigger("dropItem");
+            holdObject.transform.Find("Item").GetComponent<Item>().CollisionOff(false);
         }
     }
     public void SetHasItem(bool carryingItem)
@@ -71,7 +72,7 @@ public class ItemPickup : MonoBehaviour
         allowPickup = true;
         holdObject.transform.Find("Item").GetComponent<Item>().PickupItem();
         Invoke("StopPickupItem", 0.1f);
-        Debug.Log("PickupItem");
+        //Debug.Log("PickupItem");
     }
     private void StopPickupItem()
     {
