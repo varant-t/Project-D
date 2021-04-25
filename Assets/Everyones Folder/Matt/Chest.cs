@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
-    private bool openChest = false;
+    [SerializeField] private bool openChest = false;
     private GameObject player;
     private ItemDisplayText displayTextScript;
     // Start is called before the first frame update

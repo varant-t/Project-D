@@ -7,11 +7,14 @@ public class Lever : MonoBehaviour
     private GameObject player;
     private bool openGate = false;
     private ItemDisplayText displayTextScript;
+    private Animator leverAnim;
+    [SerializeField] private GameObject gateToOpen;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         displayTextScript = GetComponent<ItemDisplayText>();
+        leverAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,8 +30,12 @@ public class Lever : MonoBehaviour
             {
                 openGate = true;
                 displayTextScript.SetEnabled(false);
-
+                leverAnim.SetTrigger("leverDown");
             }
         }
+    }
+    public void EventOpenGate()
+    {
+        gateToOpen.GetComponent<Gate>().OpenGate();
     }
 }
