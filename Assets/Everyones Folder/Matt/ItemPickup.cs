@@ -13,6 +13,7 @@ public class ItemPickup : MonoBehaviour
     private bool allowPickup = false;
     Animator playerAnim;
     private Transform itemPlace;
+    [SerializeField] private Transform itemDrop;
     // Start is called before the first frame update
     void Start()
     {
@@ -80,7 +81,9 @@ public class ItemPickup : MonoBehaviour
 
     public void EventDropItem()
     {
-        PlaceItem(new Vector3(0, .6f, 0));
+        //PlaceItem(transform.forward * 5);
+        //PlaceItem(new Vector3(0, .6f, 0));
+        PlaceItem(itemDrop.position);
         hasItem = false;
     }
     public void EventPlaceItem()
@@ -92,5 +95,9 @@ public class ItemPickup : MonoBehaviour
     public void GetItemPlace(Transform item)
     {
         itemPlace = item;
+    }
+    public void TriggerAnimPlace()
+    {
+        playerAnim.SetTrigger("placeItem");
     }
 }

@@ -7,9 +7,11 @@ public class ItemDisplayText : MonoBehaviour
 {
     private TextMeshProUGUI itemText;
     [SerializeField] private string textToDisplay;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         itemText = GameObject.FindGameObjectWithTag("ItemText").GetComponent<TextMeshProUGUI>();
         itemText.enabled = false;
     }
@@ -21,11 +23,19 @@ public class ItemDisplayText : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        itemText.enabled = true;
-        if (textToDisplay != null)
+        if (Vector3.Distance(transform.position, player.transform.position) < 5)
         {
-            itemText.text = textToDisplay;
+            itemText.enabled = true;
+            if (textToDisplay != null)
+            {
+                itemText.text = textToDisplay;
+            }
         }
+        else
+        {
+            itemText.enabled = false;
+        }
+
     }
     private void OnMouseExit()
     {

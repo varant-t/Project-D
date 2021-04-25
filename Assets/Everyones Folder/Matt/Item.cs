@@ -5,11 +5,13 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     [SerializeField] private Transform holdObject;
+    private GameObject player;
     private ItemPickup playerItemScript;
     // Start is called before the first frame update
     void Start()
     {
-        playerItemScript = GameObject.FindGameObjectWithTag("Player").GetComponent<ItemPickup>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerItemScript = player.GetComponent<ItemPickup>();
     }
 
     // Update is called once per frame
@@ -19,10 +21,13 @@ public class Item : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !playerItemScript.GetHasItem())
+        if (Vector3.Distance(transform.position, player.transform.position) < 5)
         {
-            playerItemScript.GrabItem();
-            transform.parent = holdObject;
+            if (Input.GetKeyDown(KeyCode.E) && !playerItemScript.GetHasItem())
+            {
+                playerItemScript.GrabItem();
+                transform.parent = holdObject;
+            }
         }
     }
     public void PickupItem()
