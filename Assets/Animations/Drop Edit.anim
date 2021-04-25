@@ -47788,7 +47788,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.29166666
-    functionName: EventPlaceItem
+    functionName: EventDropItem
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: 6e4cd6fcb509eb241908c81ac6881546, type: 3}
     floatParameter: 0
