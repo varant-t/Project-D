@@ -9,11 +9,15 @@ public class AcceptItem : MonoBehaviour
     private ItemPickup playerItemScript;
     [SerializeField] private Transform itemPlace;
     [SerializeField] private bool itemAccepted = false;
+
+    private ItemDisplayText displayTextScript;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerItemScript = player.GetComponent<ItemPickup>();
+
+        displayTextScript = GetComponent<ItemDisplayText>();
     }
 
     // Update is called once per frame
@@ -25,15 +29,24 @@ public class AcceptItem : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, player.transform.position) < 5)
         {
-            playerItemScript.AllowDroppingItems(false);
-            if (playerItemScript.GetHeldObject().CompareTag("Item") && Input.GetKeyDown(KeyCode.Q))
+            if(playerItemScript.GetHasItem() == false)
             {
-                //playerItemScript.PlaceItem(itemPlace);
-                //playerItemScript.SetHasItem(false);
-                playerItemScript.GetItemPlace(itemPlace);
-                playerItemScript.TriggerAnimPlace();
-                itemAccepted = true;
+                displayTextScript.SetEnabled(false);
             }
+            else
+            {
+                displayTextScript.SetEnabled(true);
+                playerItemScript.AllowDroppingItems(false);
+                if (playerItemScript.GetHeldObject().CompareTag("Item") && Input.GetKeyDown(KeyCode.Q))
+                {
+                    //playerItemScript.PlaceItem(itemPlace);
+                    //playerItemScript.SetHasItem(false);
+                    playerItemScript.GetItemPlace(itemPlace);
+                    playerItemScript.TriggerAnimPlace();
+                    itemAccepted = true;
+                }
+            }
+
         }
 
     }

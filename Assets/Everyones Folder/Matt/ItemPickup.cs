@@ -53,14 +53,18 @@ public class ItemPickup : MonoBehaviour
     //For placing items on ground
     public void PlaceItem(Vector3 itemDestination)
     {
-        holdObject.transform.Find("Item").transform.position = itemDestination;
-        holdObject.transform.Find("Item").parent = null;
+        Transform item = holdObject.transform.Find("Item");
+        item.transform.position = itemDestination;
+        item.parent = null;
+        item.localScale = new Vector3(.25f, .25f, .25f);
     }
     //For placing items on pedestal
     public void PlaceItem(Transform itemDestination)
     {
-        holdObject.transform.Find("Item").transform.position = itemDestination.position;
-        holdObject.transform.Find("Item").parent = null;
+        Transform item = holdObject.transform.Find("Item");
+        item.transform.position = itemDestination.position;
+        item.parent = null;
+        item.localScale = new Vector3(.25f, .25f, .25f);
     }
     public void PickupItem()
     {

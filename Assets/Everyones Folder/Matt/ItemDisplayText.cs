@@ -8,6 +8,7 @@ public class ItemDisplayText : MonoBehaviour
     private TextMeshProUGUI itemText;
     [SerializeField] private string textToDisplay;
     private GameObject player;
+    private bool enable = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class ItemDisplayText : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < 5)
+        if (Vector3.Distance(transform.position, player.transform.position) < 5 && enable)
         {
             itemText.enabled = true;
             if (textToDisplay != null)
@@ -40,5 +41,9 @@ public class ItemDisplayText : MonoBehaviour
     private void OnMouseExit()
     {
         itemText.enabled = false;
+    }
+    public void SetEnabled(bool pEnable)
+    {
+        enable = pEnable;
     }
 }

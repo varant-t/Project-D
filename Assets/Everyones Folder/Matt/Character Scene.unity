@@ -675,6 +675,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4472182437162570109, guid: 5761d329c4870474d85e6fd904160f97, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9023817572364208100, guid: 5761d329c4870474d85e6fd904160f97, type: 3}
       propertyPath: itemDrop
       value: 
