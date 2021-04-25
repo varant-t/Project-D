@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lever : MonoBehaviour
+public class Chest : MonoBehaviour
 {
+    private bool openChest = false;
     private GameObject player;
-    private bool openGate = false;
     private ItemDisplayText displayTextScript;
     // Start is called before the first frame update
     void Start()
@@ -23,11 +23,10 @@ public class Lever : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.transform.position) < 5)
         {
-            if (Input.GetKeyDown(KeyCode.E) && !openGate)
+            if (Input.GetKeyDown(KeyCode.E) && !openChest)
             {
-                openGate = true;
+                openChest = true;
                 displayTextScript.SetEnabled(false);
-                transform.rotation = new Quaternion(0, 0, 90, 5);
             }
         }
     }
