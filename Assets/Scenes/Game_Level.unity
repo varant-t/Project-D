@@ -528,7 +528,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1654269747618205549}
-  m_RootOrder: 362
+  m_RootOrder: 334
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!64 &18555694
 MeshCollider:
@@ -4507,7 +4507,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1654269747618205549}
-  m_RootOrder: 334
+  m_RootOrder: 299
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -0.045}
 --- !u!65 &704554451
 BoxCollider:
@@ -4876,6 +4876,18 @@ PrefabInstance:
     - target: {fileID: 9023817572364208125, guid: 5761d329c4870474d85e6fd904160f97, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023817573975625508, guid: 5761d329c4870474d85e6fd904160f97, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023817573975625508, guid: 5761d329c4870474d85e6fd904160f97, type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023817573975625508, guid: 5761d329c4870474d85e6fd904160f97, type: 3}
+      propertyPath: m_Dithering
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5761d329c4870474d85e6fd904160f97, type: 3}
@@ -7369,7 +7381,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1654269747618205549}
-  m_RootOrder: 372
+  m_RootOrder: 335
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 89.955}
 --- !u!65 &1229922191
 BoxCollider:
@@ -11899,7 +11911,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1654269747618205549}
-  m_RootOrder: 335
+  m_RootOrder: 330
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -0.045}
 --- !u!65 &1966988519
 BoxCollider:
@@ -16390,6 +16402,7 @@ Transform:
   - {fileID: 2073180754038944176}
   - {fileID: 2073180752752953126}
   - {fileID: 2073180753962851067}
+  - {fileID: 704554450}
   - {fileID: 727772161}
   - {fileID: 1522664565}
   - {fileID: 87353446}
@@ -16420,24 +16433,24 @@ Transform:
   - {fileID: 374973710}
   - {fileID: 203818873}
   - {fileID: 503554965}
-  - {fileID: 489624323}
+  - {fileID: 1966988518}
   - {fileID: 1114255107}
-  - {fileID: 490604945}
   - {fileID: 875628883}
   - {fileID: 1697524836}
-  - {fileID: 704554450}
-  - {fileID: 1966988518}
+  - {fileID: 18555693}
+  - {fileID: 1229922190}
   - {fileID: 292005614}
   - {fileID: 368158367}
   - {fileID: 1670509139}
   - {fileID: 2117585180}
+  - {fileID: 489624323}
   - {fileID: 314560452}
   - {fileID: 804219379}
   - {fileID: 518573856}
   - {fileID: 2025585341}
   - {fileID: 1704784164}
   - {fileID: 882082567}
-  - {fileID: 875195302}
+  - {fileID: 490604945}
   - {fileID: 1699608755}
   - {fileID: 525704526}
   - {fileID: 1205867506}
@@ -16449,11 +16462,11 @@ Transform:
   - {fileID: 703869601}
   - {fileID: 7086826818909525893}
   - {fileID: 3306733447816842604}
-  - {fileID: 556730588}
   - {fileID: 1052769360}
+  - {fileID: 875195302}
   - {fileID: 776033183}
   - {fileID: 1906321783}
-  - {fileID: 18555693}
+  - {fileID: 556730588}
   - {fileID: 1269618407}
   - {fileID: 195569245}
   - {fileID: 790490070}
@@ -16463,7 +16476,6 @@ Transform:
   - {fileID: 1774027789}
   - {fileID: 822459460}
   - {fileID: 1705289407}
-  - {fileID: 1229922190}
   - {fileID: 1028275797}
   - {fileID: 717636702}
   m_Father: {fileID: 1654269748286012838}
