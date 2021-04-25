@@ -15,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - CollideWithGround
+  - Ignore Player
+  - Player
   - 
   - 
   - 

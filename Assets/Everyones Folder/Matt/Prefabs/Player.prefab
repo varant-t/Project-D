@@ -481,7 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasItem: 0
   holdObject: {fileID: 6655149444258477491}
-  itemDrop: {fileID: 0}
+  itemDrop: {fileID: 4472182437162570109}
 --- !u!114 &8898842029699815843
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class ItemPickup : MonoBehaviour
         //Debug.Log(allowDropping);
         if (hasItem)
         {
-            heldObject = holdObject.transform.Find("Item").gameObject;
+            heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item").transform.name).gameObject;
         }
         if(hasItem && Input.GetKeyDown(KeyCode.Q) && transform.GetComponent<PlayerMovement>().IsGrounded() && allowDropping)
         {
@@ -54,7 +54,8 @@ public class ItemPickup : MonoBehaviour
     //For placing items on ground
     public void PlaceItem(Vector3 itemDestination)
     {
-        Transform item = holdObject.transform.Find("Item");
+        Transform item = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item").transform.name);
+        //Transform item = holdObject.transform.Find("Item");
         item.transform.position = itemDestination;
         item.parent = null;
         item.localScale = new Vector3(.25f, .25f, .25f);
@@ -62,7 +63,8 @@ public class ItemPickup : MonoBehaviour
     //For placing items on pedestal
     public void PlaceItem(Transform itemDestination)
     {
-        Transform item = holdObject.transform.Find("Item");
+        //Transform item = holdObject.transform.Find("Item");
+        Transform item = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item").transform.name);
         item.transform.position = itemDestination.position;
         item.parent = null;
         item.localScale = new Vector3(.25f, .25f, .25f);
@@ -70,7 +72,7 @@ public class ItemPickup : MonoBehaviour
     public void PickupItem()
     {
         allowPickup = true;
-        holdObject.transform.Find("Item").GetComponent<Item>().PickupItem();
+        holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item").transform.name).GetComponent<Item>().PickupItem();
         Invoke("StopPickupItem", 0.1f);
         //Debug.Log("PickupItem");
     }
@@ -106,6 +108,6 @@ public class ItemPickup : MonoBehaviour
 
     public void DisableItemOnPedestal()
     {
-        holdObject.transform.Find("Item").GetComponent<Item>().SetIsPlaced();
+        holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item").transform.name).GetComponent<Item>().SetIsPlaced();
     }
 }
