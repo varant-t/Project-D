@@ -7,11 +7,14 @@ public class Item : MonoBehaviour
     [SerializeField] private Transform holdObject;
     private GameObject player;
     private ItemPickup playerItemScript;
+    private bool isPlaced = false;
+    private ItemDisplayText displayTextScript;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerItemScript = player.GetComponent<ItemPickup>();
+        displayTextScript = GetComponent<ItemDisplayText>();
     }
 
     // Update is called once per frame
@@ -21,7 +24,7 @@ public class Item : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < 5)
+        if (Vector3.Distance(transform.position, player.transform.position) < 5 && !isPlaced)
         {
             if (Input.GetKeyDown(KeyCode.E) && !playerItemScript.GetHasItem())
             {
@@ -34,5 +37,11 @@ public class Item : MonoBehaviour
     {
         transform.position = holdObject.position;
         playerItemScript.SetHasItem(true);
+    }
+    //When placed on pedestal should no longer be able to pickup
+    public void SetIsPlaced()
+    {
+        isPlaced = true;
+        displayTextScript.SetEnabled(false);
     }
 }

@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class DoorManager : MonoBehaviour
 {
-    public GameObject[] pedestals;
+    [SerializeField] private GameObject[] pedestals;
+    [SerializeField] private int numOfPedestals;
+    private int currNum;
+    [SerializeField] private bool openDoor = false;
+    Animator doorAnim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        doorAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+    }
+    public void CheckWinCondition()
+    {
+        currNum++;
+        if (currNum >= numOfPedestals)
+        {
+            openDoor = true;
+            doorAnim.SetTrigger("openDoor");
+        }
     }
 }

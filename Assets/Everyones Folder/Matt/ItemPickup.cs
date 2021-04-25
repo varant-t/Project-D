@@ -85,8 +85,6 @@ public class ItemPickup : MonoBehaviour
 
     public void EventDropItem()
     {
-        //PlaceItem(transform.forward * 5);
-        //PlaceItem(new Vector3(0, .6f, 0));
         PlaceItem(itemDrop.position);
         hasItem = false;
     }
@@ -103,5 +101,10 @@ public class ItemPickup : MonoBehaviour
     public void TriggerAnimPlace()
     {
         playerAnim.SetTrigger("placeItem");
+    }
+
+    public void DisableItemOnPedestal()
+    {
+        holdObject.transform.Find("Item").GetComponent<Item>().SetIsPlaced();
     }
 }
