@@ -11,6 +11,7 @@ public class AcceptItem : MonoBehaviour
     [SerializeField] private bool itemAccepted = false;
 
     private ItemDisplayText displayTextScript;
+    [SerializeField] private DoorManager doorManagerScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +40,11 @@ public class AcceptItem : MonoBehaviour
                 playerItemScript.AllowDroppingItems(false);
                 if (playerItemScript.GetHeldObject().CompareTag("Item") && Input.GetKeyDown(KeyCode.Q))
                 {
-                    //playerItemScript.PlaceItem(itemPlace);
-                    //playerItemScript.SetHasItem(false);
+                    playerItemScript.DisableItemOnPedestal();
                     playerItemScript.GetItemPlace(itemPlace);
                     playerItemScript.TriggerAnimPlace();
                     itemAccepted = true;
+                    doorManagerScript.CheckWinCondition();
                 }
             }
 
