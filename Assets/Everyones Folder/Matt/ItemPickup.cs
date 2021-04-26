@@ -32,7 +32,7 @@ public class ItemPickup : MonoBehaviour
         {
             //Debug.Log("Drop Item");
             playerAnim.SetTrigger("dropItem");
-            holdObject.transform.Find("Item").GetComponent<Item>().CollisionOff(false);
+            holdObject.transform.Find("Item1").GetComponent<Item>().CollisionOff(false);
         }
     }
     public void SetHasItem(bool carryingItem)
@@ -117,30 +117,30 @@ public class ItemPickup : MonoBehaviour
     private void SetHeldObject()
     {
         heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item1").transform.name).gameObject;
-        if(heldObject == null)
-        {
-            heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item2").transform.name).gameObject;
-            if(heldObject == null)
-            {
-                heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item3").transform.name).gameObject;
-                if(heldObject == null)
-                {
-                    heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item4").transform.name).gameObject;
-                    if(heldObject == null)
-                    {
-                        heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item5").transform.name).gameObject;
-                        if(heldObject == null)
-                        {
-                            heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item6").transform.name).gameObject;
-                        }
+        //if(heldObject == null)
+        //{
+        //    heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item2").transform.name).gameObject;
+        //    if(heldObject == null)
+        //    {
+        //        heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item3").transform.name).gameObject;
+        //        if(heldObject == null)
+        //        {
+        //            heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item4").transform.name).gameObject;
+        //            if(heldObject == null)
+        //            {
+        //                heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item5").transform.name).gameObject;
+        //                if(heldObject == null)
+        //                {
+        //                    heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item6").transform.name).gameObject;
+        //                }
                         
-                    }
+        //            }
 
-                }
+        //        }
 
-            }
+        //    }
 
-        }
+        //}
 
 
     }
