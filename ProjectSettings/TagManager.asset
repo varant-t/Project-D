@@ -13,6 +13,7 @@ TagManager:
   - Item5
   - Item6
   - HoldObject
+  - Key
   layers:
   - Default
   - TransparentFX

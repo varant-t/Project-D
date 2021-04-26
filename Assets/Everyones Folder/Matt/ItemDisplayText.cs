@@ -46,4 +46,9 @@ public class ItemDisplayText : MonoBehaviour
     {
         enable = pEnable;
     }
+
+    public void SetText(string text)
+    {
+        textToDisplay = text;
+    }
 }
