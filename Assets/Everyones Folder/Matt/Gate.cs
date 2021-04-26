@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gate : MonoBehaviour
 {
     Animator animGate;
+    public AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,5 +14,7 @@ public class Gate : MonoBehaviour
     public void OpenGate()
     {
         animGate.SetTrigger("openGate");
+        audio.Play();
+
     }
 }

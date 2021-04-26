@@ -8,6 +8,7 @@ public class Lever : MonoBehaviour
     private bool openGate = false;
     private ItemDisplayText displayTextScript;
     private Animator leverAnim;
+    public AudioSource m_audio;
     [SerializeField] private GameObject gateToOpen;
     [SerializeField] private bool OPENVARANTSER = false;
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class Lever : MonoBehaviour
                 openGate = true;
                 displayTextScript.SetEnabled(false);
                 leverAnim.SetTrigger("leverDown");
+                m_audio.Play();
             }
         }
     }

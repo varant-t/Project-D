@@ -9,6 +9,8 @@ public class DoorManager : MonoBehaviour
     private int currNum;
     [SerializeField] private bool openDoor = false;
     Animator doorAnim;
+    public AudioSource m_MyAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class DoorManager : MonoBehaviour
         {
             openDoor = true;
             doorAnim.SetTrigger("openDoor");
+            m_MyAudioSource.Play();
         }
     }
 }

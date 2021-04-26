@@ -13,6 +13,8 @@ public class AcceptItem : MonoBehaviour
     private ItemDisplayText displayTextScript;
     [SerializeField] private DoorManager doorManagerScript;
     [SerializeField] private Gate gateManagerScript;
+
+    public AudioSource m_MyAudioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +47,8 @@ public class AcceptItem : MonoBehaviour
                     playerItemScript.GetItemPlace(itemPlace);
                     playerItemScript.TriggerAnimPlace();
                     itemAccepted = true;
-                    if(doorManagerScript != null)
+                    m_MyAudioSource.Play();
+                    if (doorManagerScript != null)
                     {
                         doorManagerScript.CheckWinCondition();
                     }

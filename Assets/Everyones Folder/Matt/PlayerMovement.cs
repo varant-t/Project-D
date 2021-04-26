@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Anim")]
     [SerializeField] private GameObject arms;
     Animator playerAnim;
+
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -84,13 +86,19 @@ public class PlayerMovement : MonoBehaviour
         if(playerRB.velocity.x != 0 || playerRB.velocity.z != 0)
         {
             playerAnim.SetInteger("Speed", 1);
+            
         }
         else
         {
             playerAnim.SetInteger("Speed", 0);
             playerRB.velocity = Vector3.zero;
+            
         }
         //transform.Translate(moveSide, 0, moveFor);
+
+
+       
+        
 
     }
     public bool IsGrounded()
