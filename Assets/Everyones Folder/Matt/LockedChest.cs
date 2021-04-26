@@ -9,6 +9,7 @@ public class LockedChest : MonoBehaviour
     private ItemDisplayText displayTextScript;
     private Animator animChest;
     private ItemPickup playerItemScript;
+    public AudioSource m_MyAudioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class LockedChest : MonoBehaviour
                 displayTextScript.SetEnabled(false);
                 animChest.SetTrigger("openChest");
                 playerItemScript.DestroyKey();
+                m_MyAudioSource.Play();
             }
         }
     }

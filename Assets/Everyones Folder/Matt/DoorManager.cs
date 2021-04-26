@@ -10,6 +10,7 @@ public class DoorManager : MonoBehaviour
     [SerializeField] private bool openDoor = false;
     Animator doorAnim;
     public AudioSource m_MyAudioSource;
+    public AudioSource m_AudioSource;
 
     [SerializeField] private bool willSlam;
 
@@ -35,6 +36,7 @@ public class DoorManager : MonoBehaviour
         {
             willSlam = false;
             doorAnim.SetTrigger("doorSlam");
+            
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -47,7 +49,7 @@ public class DoorManager : MonoBehaviour
         {
             willSlam = false;
             doorAnim.SetTrigger("slamDoor");
-            m_MyAudioSource.Play();
+            m_AudioSource.Play();
         }
     }
 }
