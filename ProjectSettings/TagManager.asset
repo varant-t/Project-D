@@ -12,6 +12,7 @@ TagManager:
   - Item4
   - Item5
   - Item6
+  - HoldObject
   layers:
   - Default
   - TransparentFX
