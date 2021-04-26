@@ -39,13 +39,13 @@ public class PlayerMovement : MonoBehaviour
 
         //Debug.Log("Vertical " + Input.GetAxis("Vertical"));
         //Debug.Log("Horizontal " + Input.GetAxis("Horizontal"));
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 2f);
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            Debug.Log("Jump");
-            playerRB.velocity = Vector3.zero;
-            playerRB.AddForce(Vector3.up * jumpForce);
-        }
+        //isGrounded = Physics.Raycast(transform.position, Vector3.down, 2f);
+        //if (Input.GetButtonDown("Jump") && isGrounded)
+        //{
+        //    Debug.Log("Jump");
+        //    playerRB.velocity = Vector3.zero;
+        //    playerRB.AddForce(Vector3.up * jumpForce);
+        //}
 
         //Basic Camera
         float camHorizontal = Input.GetAxis("Mouse X") * camSpeed;
