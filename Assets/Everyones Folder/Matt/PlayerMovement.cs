@@ -120,6 +120,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (other.CompareTag("KillBox"))
         {
+            Cursor.visible = true;
+            Screen.lockCursor = false;
             SceneManager.LoadScene("Credit_Scene");
         }
         
