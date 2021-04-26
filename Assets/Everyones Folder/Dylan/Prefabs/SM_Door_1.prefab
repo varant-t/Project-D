@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 2124981219000034185}
   - component: {fileID: 131477989}
   - component: {fileID: 131477995}
-  - component: {fileID: 131477990}
+  - component: {fileID: 1481921824}
+  - component: {fileID: 1481921823}
   m_Layer: 0
   m_Name: SM_Door_1
   m_TagString: Untagged
@@ -214,7 +215,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &131477990
+--- !u!65 &1481921824
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357387100843124566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9549711, y: 0.37195298, z: 1.9557196}
+  m_Center: {x: -0.47351795, y: 0.09639867, z: -1.0081943}
+--- !u!95 &1481921823
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

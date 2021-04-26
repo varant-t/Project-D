@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             playerAnim.SetInteger("Speed", 0);
-            playerRB.velocity = Vector3.zero;
+            //playerRB.velocity = Vector3.zero;
             
         }
         //transform.Translate(moveSide, 0, moveFor);
@@ -111,4 +111,16 @@ public class PlayerMovement : MonoBehaviour
     //    playerRB.constraints = RigidbodyConstraints.FreezeRotationX;
     //    playerRB.constraints = RigidbodyConstraints.FreezeRotationZ;
     //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Door"))
+        {
+            other.GetComponentInParent<DoorManager>().SlamDoor();
+        }
+        if (other.CompareTag("KillBox"))
+        {
+            Destroy(gameObject);
+        }
+        
+    }
 }

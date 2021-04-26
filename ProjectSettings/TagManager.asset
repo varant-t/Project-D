@@ -10,6 +10,8 @@ TagManager:
   - HoldObject
   - Key
   - Book
+  - Door
+  - KillBox
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,8 @@ public class DoorManager : MonoBehaviour
     Animator doorAnim;
     public AudioSource m_MyAudioSource;
 
+    [SerializeField] private bool willSlam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,28 @@ public class DoorManager : MonoBehaviour
         {
             openDoor = true;
             doorAnim.SetTrigger("openDoor");
+            m_MyAudioSource.Play();
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collision");
+        if (willSlam)
+        {
+            willSlam = false;
+            doorAnim.SetTrigger("doorSlam");
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision");
+    }
+    public void SlamDoor()
+    {
+        if (willSlam)
+        {
+            willSlam = false;
+            doorAnim.SetTrigger("slamDoor");
             m_MyAudioSource.Play();
         }
     }
