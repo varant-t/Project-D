@@ -4433,6 +4433,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca3cee93217a7d546aed7c6ca4bf75c5, type: 3}
+--- !u!1 &290007216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7341596668029912600, guid: a8e8d12053be305418545108de044e9e, type: 3}
+  m_PrefabInstance: {fileID: 703869600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &292005613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6868,6 +6873,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6299579823788140273, guid: 2870f033be733704bb6860cedf447d66, type: 3}
   m_PrefabInstance: {fileID: 1275991624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &487014498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7341596668029912600, guid: a8e8d12053be305418545108de044e9e, type: 3}
+  m_PrefabInstance: {fileID: 1906321782}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &490604944
 PrefabInstance:
@@ -9899,6 +9909,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1663808847602654086, guid: 8f8d5e59ec7a40740b10f7442d4f6deb, type: 3}
   m_PrefabInstance: {fileID: 776033182}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &784885163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 661969182484943098, guid: 6b3aa927f6580244f84e685ba0f9ca44, type: 3}
+  m_PrefabInstance: {fileID: 898088103}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8b290d091917045a6a33c006bb9a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &786668553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2966163742856666709, guid: ca3cee93217a7d546aed7c6ca4bf75c5, type: 3}
@@ -16505,6 +16526,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gatee
       objectReference: {fileID: 0}
+    - target: {fileID: 5252341697752415369, guid: 6b3aa927f6580244f84e685ba0f9ca44, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4cf47fa90e765ee43aecb4388354195d, type: 2}
     - target: {fileID: 8867254305048894805, guid: 6b3aa927f6580244f84e685ba0f9ca44, type: 3}
       propertyPath: m_LocalPosition.x
       value: 48.80765
@@ -23979,6 +24004,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1654269747618205549}
     m_Modifications:
+    - target: {fileID: 2124981219000034185, guid: c842bd9f79838324b9c13867e7e32d3e, type: 3}
+      propertyPath: pedestals.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2124981219000034185, guid: c842bd9f79838324b9c13867e7e32d3e, type: 3}
+      propertyPath: numOfPedestals
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2124981219000034185, guid: c842bd9f79838324b9c13867e7e32d3e, type: 3}
+      propertyPath: pedestals.Array.data[0]
+      value: 
+      objectReference: {fileID: 290007216}
+    - target: {fileID: 2124981219000034185, guid: c842bd9f79838324b9c13867e7e32d3e, type: 3}
+      propertyPath: pedestals.Array.data[1]
+      value: 
+      objectReference: {fileID: 487014498}
     - target: {fileID: 7357387100843124566, guid: c842bd9f79838324b9c13867e7e32d3e, type: 3}
       propertyPath: m_Name
       value: SM_Door_1
@@ -28663,6 +28704,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2aececc520cf44683051028c1e5bb4, type: 3}
+--- !u!1 &1481921822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7357387100843124566, guid: c842bd9f79838324b9c13867e7e32d3e, type: 3}
+  m_PrefabInstance: {fileID: 1114255106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1481921823
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481921822}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c664a6977d7da3547a92d1bfd2a568ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1481921824
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481921822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9549711, y: 0.37195298, z: 1.9557196}
+  m_Center: {x: -0.47351795, y: 0.09639867, z: -1.0081943}
 --- !u!1001 &1486262157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40946,6 +41024,10 @@ PrefabInstance:
       propertyPath: itemToAccept
       value: 
       objectReference: {fileID: 5645620064462365814, guid: abdf117b121d21c4cbc1c0b123d9337c, type: 3}
+    - target: {fileID: 6275935146328040857, guid: a8e8d12053be305418545108de044e9e, type: 3}
+      propertyPath: gateManagerScript
+      value: 
+      objectReference: {fileID: 784885163}
     - target: {fileID: 7341596668029912600, guid: a8e8d12053be305418545108de044e9e, type: 3}
       propertyPath: m_Name
       value: Pedestall
@@ -46295,7 +46377,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: -3.7688062, y: -2.5429597, z: 0.97079426, w: -2.379734}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

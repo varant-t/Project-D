@@ -12,6 +12,7 @@ public class AcceptItem : MonoBehaviour
 
     private ItemDisplayText displayTextScript;
     [SerializeField] private DoorManager doorManagerScript;
+    [SerializeField] private Gate gateManagerScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +48,10 @@ public class AcceptItem : MonoBehaviour
                     if(doorManagerScript != null)
                     {
                         doorManagerScript.CheckWinCondition();
+                    }
+                    else if(gateManagerScript != null)
+                    {
+                        gateManagerScript.OpenGate();
                     }
                     else
                     {
