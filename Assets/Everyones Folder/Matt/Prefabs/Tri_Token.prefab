@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8555494970686811159}
   m_Layer: 8
   m_Name: Tri_Token
-  m_TagString: Item
+  m_TagString: Item1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

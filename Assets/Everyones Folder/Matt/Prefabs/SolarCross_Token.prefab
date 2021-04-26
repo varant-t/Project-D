@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6822454103120281888}
   m_Layer: 8
   m_Name: SolarCross_Token
-  m_TagString: Item
+  m_TagString: Item1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
