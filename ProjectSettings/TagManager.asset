@@ -7,13 +7,9 @@ TagManager:
   - ItemText
   - Item
   - Item1
-  - Item2
-  - Item3
-  - Item4
-  - Item5
-  - Item6
   - HoldObject
   - Key
+  - Book
   layers:
   - Default
   - TransparentFX

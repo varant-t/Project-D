@@ -59,7 +59,15 @@ public class ItemPickup : MonoBehaviour
         //Transform item = holdObject.transform.Find("Item");
         item.transform.position = itemDestination;
         item.parent = null;
-        item.localScale = new Vector3(.25f, .25f, .25f);
+        if (!item.CompareTag("Book"))
+        {
+            item.localScale = new Vector3(.25f, .25f, .25f);
+        }
+        else
+        {
+            item.localScale = new Vector3(0.023737f, 0.023737f, 0.023737f);
+        }
+        
     }
     //For placing items on pedestal
     public void PlaceItem(Transform itemDestination)
