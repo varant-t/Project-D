@@ -88,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             playerAnim.SetInteger("Speed", 0);
+            playerRB.velocity = Vector3.zero;
         }
         //transform.Translate(moveSide, 0, moveFor);
 
