@@ -154,4 +154,12 @@ public class ItemPickup : MonoBehaviour
 
 
     }
+
+    public void DestroyKey()
+    {
+        if (heldObject.CompareTag("Key"))
+        {
+            Destroy(heldObject);
+        }
+    }
 }

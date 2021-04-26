@@ -31,6 +31,7 @@ public class LockedChest : MonoBehaviour
                 openChest = true;
                 displayTextScript.SetEnabled(false);
                 animChest.SetTrigger("openChest");
+                playerItemScript.DestroyKey();
             }
         }
     }
