@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //playerRB.constraints = RigidbodyConstraints.FreezeRotation;
         //Tried this to fix warping scale
         //arms.transform.localScale = new Vector3(1, 1, 1);
         //arms.transform.position = cam.transform.position;
@@ -95,14 +96,19 @@ public class PlayerMovement : MonoBehaviour
             
         }
         //transform.Translate(moveSide, 0, moveFor);
-
-
-       
-        
-
     }
     public bool IsGrounded()
     {
         return isGrounded;
     }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    playerRB.constraints = RigidbodyConstraints.FreezeRotationY;
+    //}
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    playerRB.constraints = RigidbodyConstraints.None;
+    //    playerRB.constraints = RigidbodyConstraints.FreezeRotationX;
+    //    playerRB.constraints = RigidbodyConstraints.FreezeRotationZ;
+    //}
 }
