@@ -9013,6 +9013,10 @@ PrefabInstance:
       propertyPath: itemToAccept
       value: 
       objectReference: {fileID: 7921124595734301084, guid: 137f6d5263788ac43b492ac906f2a61b, type: 3}
+    - target: {fileID: 6275935146328040857, guid: a8e8d12053be305418545108de044e9e, type: 3}
+      propertyPath: doorManagerScript
+      value: 
+      objectReference: {fileID: 1481921826}
     - target: {fileID: 7341596668029912600, guid: a8e8d12053be305418545108de044e9e, type: 3}
       propertyPath: m_Name
       value: Pedestall
@@ -28719,7 +28723,7 @@ Animator:
   m_GameObject: {fileID: 1481921822}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c664a6977d7da3547a92d1bfd2a568ed, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8e130cb206654b546951016d3e0a9a7f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -28741,6 +28745,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9549711, y: 0.37195298, z: 1.9557196}
   m_Center: {x: -0.47351795, y: 0.09639867, z: -1.0081943}
+--- !u!114 &1481921826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2124981219000034185, guid: c842bd9f79838324b9c13867e7e32d3e, type: 3}
+  m_PrefabInstance: {fileID: 1114255106}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481921822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9fd72726cd0a3e498a4040910d1df5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1486262157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43502,6 +43517,10 @@ PrefabInstance:
       propertyPath: itemToAccept
       value: 
       objectReference: {fileID: 5880013372677054386, guid: 7d509dedd8628374a8b5a41bdbe8ad3d, type: 3}
+    - target: {fileID: 6275935146328040857, guid: a8e8d12053be305418545108de044e9e, type: 3}
+      propertyPath: doorManagerScript
+      value: 
+      objectReference: {fileID: 1481921826}
     - target: {fileID: 7341596668029912600, guid: a8e8d12053be305418545108de044e9e, type: 3}
       propertyPath: m_Name
       value: Pedestall (1)
