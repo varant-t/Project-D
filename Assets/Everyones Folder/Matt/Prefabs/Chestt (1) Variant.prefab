@@ -20,6 +20,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1570910738876197140, guid: b9d29532cc18ab84798a0d3488aa8bce, type: 3}
+      propertyPath: m_Size.z
+      value: 0.18057778
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570910738876197140, guid: b9d29532cc18ab84798a0d3488aa8bce, type: 3}
+      propertyPath: m_Center.x
+      value: 0.000007528401
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570910738876197140, guid: b9d29532cc18ab84798a0d3488aa8bce, type: 3}
+      propertyPath: m_Center.z
+      value: 0.007881309
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570910738876197140, guid: b9d29532cc18ab84798a0d3488aa8bce, type: 3}
+      propertyPath: m_Center.y
+      value: -0.21034285
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570910738876197140, guid: b9d29532cc18ab84798a0d3488aa8bce, type: 3}
+      propertyPath: m_Size.y
+      value: 0.42092255
+      objectReference: {fileID: 0}
     - target: {fileID: 4964893562401792831, guid: b9d29532cc18ab84798a0d3488aa8bce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.3
@@ -66,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5741254786530244997, guid: b9d29532cc18ab84798a0d3488aa8bce, type: 3}
       propertyPath: m_Name
-      value: Chestt (1)
+      value: Chestt (1) Variant
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1815472478, guid: b9d29532cc18ab84798a0d3488aa8bce, type: 3}
