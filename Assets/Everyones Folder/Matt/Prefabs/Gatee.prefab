@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8867254305048894805}
   - component: {fileID: 5252341697752415369}
   - component: {fileID: 661969182484943098}
+  - component: {fileID: 3143169667185877750}
   m_Layer: 0
   m_Name: Gatee
   m_TagString: Untagged
@@ -25,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2329803790343096830}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 8521802117600179909}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!95 &5252341697752415369
 Animator:
   serializedVersion: 3
@@ -64,6 +65,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8b290d091917045a6a33c006bb9a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3143169667185877750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329803790343096830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.5350018, y: 1, z: 4.645336}
+  m_Center: {x: 0.07203007, y: -2.5200247e-15, z: 1.8226686}
 --- !u!1001 &5093065879639844113
 PrefabInstance:
   m_ObjectHideFlags: 0
