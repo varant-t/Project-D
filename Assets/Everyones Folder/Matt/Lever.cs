@@ -9,6 +9,7 @@ public class Lever : MonoBehaviour
     private ItemDisplayText displayTextScript;
     private Animator leverAnim;
     [SerializeField] private GameObject gateToOpen;
+    [SerializeField] private bool OPENVARANTSER = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,13 @@ public class Lever : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (OPENVARANTSER)
+        {
+            OPENVARANTSER = false;
+            openGate = true;
+            displayTextScript.SetEnabled(false);
+            leverAnim.SetTrigger("leverDown");
+        }
     }
     private void OnMouseOver()
     {
