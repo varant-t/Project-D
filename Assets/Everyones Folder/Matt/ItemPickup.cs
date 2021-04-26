@@ -27,12 +27,13 @@ public class ItemPickup : MonoBehaviour
         if (hasItem)
         {
             //heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item1").transform.name).gameObject;
+            heldObject = holdObject.transform.GetChild(0).gameObject;
         }
         if(hasItem && Input.GetKeyDown(KeyCode.Q) && transform.GetComponent<PlayerMovement>().IsGrounded() && allowDropping)
         {
             //Debug.Log("Drop Item");
             playerAnim.SetTrigger("dropItem");
-            holdObject.transform.Find("Item1").GetComponent<Item>().CollisionOff(false);
+            holdObject.GetComponentInChildren<Item>().CollisionOff(false);
         }
     }
     public void SetHasItem(bool carryingItem)
@@ -73,7 +74,8 @@ public class ItemPickup : MonoBehaviour
     {
         allowPickup = true;
         //heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item1").transform.name).gameObject;
-        SetHeldObject();
+        heldObject = holdObject.transform.GetChild(0).gameObject;
+        //SetHeldObject();
         heldObject.GetComponent<Item>().PickupItem();
         Invoke("StopPickupItem", 0.1f);
         //Debug.Log("PickupItem");
@@ -116,7 +118,7 @@ public class ItemPickup : MonoBehaviour
 
     private void SetHeldObject()
     {
-        heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item1").transform.name).gameObject;
+        //heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item1").transform.name).gameObject;
         //if(heldObject == null)
         //{
         //    heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item2").transform.name).gameObject;
