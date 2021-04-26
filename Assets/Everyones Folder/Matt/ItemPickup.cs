@@ -29,7 +29,7 @@ public class ItemPickup : MonoBehaviour
             //heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item1").transform.name).gameObject;
             heldObject = holdObject.transform.GetChild(0).gameObject;
         }
-        if(hasItem && Input.GetKeyDown(KeyCode.Q) && transform.GetComponent<PlayerMovement>().IsGrounded() && allowDropping)
+        if(hasItem && Input.GetKeyDown(KeyCode.Q) && allowDropping)
         {
             //Debug.Log("Drop Item");
             playerAnim.SetTrigger("dropItem");
