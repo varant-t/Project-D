@@ -159,7 +159,10 @@ public class ItemPickup : MonoBehaviour
     {
         if (heldObject.CompareTag("Key"))
         {
-            Destroy(heldObject);
+            
+            playerAnim.SetTrigger("dropItem");
+            holdObject.GetComponentInChildren<Item>().CollisionOff(false);
+            Destroy(heldObject, 1f);
         }
     }
 }
