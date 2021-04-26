@@ -19,6 +19,7 @@ public class Item : MonoBehaviour
         displayTextScript = GetComponent<ItemDisplayText>();
         itemRB = GetComponent<Rigidbody>();
         itemCol = GetComponent<BoxCollider>();
+        holdObject = GameObject.FindGameObjectWithTag("HoldObject").transform;
     }
 
     // Update is called once per frame

@@ -11,9 +11,13 @@ GameObject:
   - component: {fileID: 4977204528465624780}
   - component: {fileID: 8267851011757420905}
   - component: {fileID: 6150151246754301347}
-  m_Layer: 0
+  - component: {fileID: 7899761525902569184}
+  - component: {fileID: 2958880334347519362}
+  - component: {fileID: 7976758509697664944}
+  - component: {fileID: 6822454103120281888}
+  m_Layer: 8
   m_Name: SolarCross_Token
-  m_TagString: Item5
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,3 +85,59 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &7899761525902569184
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5645620064462365814}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2958880334347519362
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5645620064462365814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0.000000059604645, y: -0.0000000074505815, z: -0.00000002980232}
+--- !u!114 &7976758509697664944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5645620064462365814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d7d7c185727ac498c16068ecf60caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textToDisplay: Press E to pickup
+--- !u!114 &6822454103120281888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5645620064462365814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be64881c27f680a49ac80760e666097b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdObject: {fileID: 0}
+  itemCol: {fileID: 2958880334347519362}
