@@ -9,15 +9,12 @@ public class Chest : MonoBehaviour
     private ItemDisplayText displayTextScript;
     private Animator animChest;
     public AudioSource m_MyAudioSource;
-    
-
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         displayTextScript = GetComponent<ItemDisplayText>();
         animChest = GetComponent<Animator>();
-        
     }
 
     private void OnMouseOver()

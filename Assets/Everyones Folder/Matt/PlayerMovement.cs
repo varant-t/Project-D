@@ -35,29 +35,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //playerRB.constraints = RigidbodyConstraints.FreezeRotation;
-        //Tried this to fix warping scale
-        //arms.transform.localScale = new Vector3(1, 1, 1);
-        //arms.transform.position = cam.transform.position;
-        //arms.transform.rotation = cam.transform.rotation;
-
-        //Debug.Log("Vertical " + Input.GetAxis("Vertical"));
-        //Debug.Log("Horizontal " + Input.GetAxis("Horizontal"));
-        //isGrounded = Physics.Raycast(transform.position, Vector3.down, 2f);
-        //if (Input.GetButtonDown("Jump") && isGrounded)
-        //{
-        //    Debug.Log("Jump");
-        //    playerRB.velocity = Vector3.zero;
-        //    playerRB.AddForce(Vector3.up * jumpForce);
-        //}
-
         //Basic Camera
         float camHorizontal = Input.GetAxis("Mouse X") * camSpeed;
         float camVertical = Input.GetAxis("Mouse Y") * camSpeed;
         transform.Rotate(0, camHorizontal, 0);
         if (camVertical > 0)
         {
-            //Debug.Log("Positive");
             //90-270 degrees
             if (cam.transform.eulerAngles.x < 270 + angleView && cam.transform.eulerAngles.x > 90)
             {
@@ -66,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (camVertical < 0)
         {
-            //Debug.Log("Negative");
             if (cam.transform.eulerAngles.x > 90 - angleView && cam.transform.eulerAngles.x < 270)
             {
                 camVertical = 0;
@@ -83,7 +65,6 @@ public class PlayerMovement : MonoBehaviour
         float moveFor = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         //Left and Right Side Movement
         float moveSide = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        //Debug.Log(transform.TransformDirection(transform.forward));
         playerRB.velocity = transform.TransformDirection(moveSide, playerRB.velocity.y, moveFor);
         if(playerRB.velocity.x != 0 || playerRB.velocity.z != 0)
         {
@@ -93,25 +74,12 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             playerAnim.SetInteger("Speed", 0);
-            //playerRB.velocity = Vector3.zero;
-            
         }
-        //transform.Translate(moveSide, 0, moveFor);
     }
     public bool IsGrounded()
     {
         return isGrounded;
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    playerRB.constraints = RigidbodyConstraints.FreezeRotationY;
-    //}
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    playerRB.constraints = RigidbodyConstraints.None;
-    //    playerRB.constraints = RigidbodyConstraints.FreezeRotationX;
-    //    playerRB.constraints = RigidbodyConstraints.FreezeRotationZ;
-    //}
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Door"))

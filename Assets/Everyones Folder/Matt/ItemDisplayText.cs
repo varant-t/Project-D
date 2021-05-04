@@ -17,11 +17,6 @@ public class ItemDisplayText : MonoBehaviour
         itemText.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnMouseOver()
     {
         if (Vector3.Distance(transform.position, player.transform.position) < 5 && enable)

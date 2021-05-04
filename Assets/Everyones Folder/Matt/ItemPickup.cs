@@ -23,15 +23,12 @@ public class ItemPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(allowDropping);
         if (hasItem)
         {
-            //heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item1").transform.name).gameObject;
             heldObject = holdObject.transform.GetChild(0).gameObject;
         }
         if(hasItem && Input.GetKeyDown(KeyCode.Q) && allowDropping)
         {
-            //Debug.Log("Drop Item");
             playerAnim.SetTrigger("dropItem");
             holdObject.GetComponentInChildren<Item>().CollisionOff(false);
         }
@@ -56,7 +53,6 @@ public class ItemPickup : MonoBehaviour
     public void PlaceItem(Vector3 itemDestination)
     {
         Transform item = heldObject.transform;
-        //Transform item = holdObject.transform.Find("Item");
         item.transform.position = itemDestination;
         item.parent = null;
         if (!item.CompareTag("Book"))
@@ -81,12 +77,9 @@ public class ItemPickup : MonoBehaviour
     public void PickupItem()
     {
         allowPickup = true;
-        //heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item1").transform.name).gameObject;
         heldObject = holdObject.transform.GetChild(0).gameObject;
-        //SetHeldObject();
         heldObject.GetComponent<Item>().PickupItem();
         Invoke("StopPickupItem", 0.1f);
-        //Debug.Log("PickupItem");
     }
     private void StopPickupItem()
     {
@@ -97,7 +90,6 @@ public class ItemPickup : MonoBehaviour
     {
         playerAnim.SetTrigger("grabItem");
     }
-
     public void EventDropItem()
     {
         PlaceItem(itemDrop.position);
@@ -121,38 +113,6 @@ public class ItemPickup : MonoBehaviour
     public void DisableItemOnPedestal()
     {
         heldObject.GetComponent<Item>().SetIsPlaced();
-    }
-
-
-    private void SetHeldObject()
-    {
-        //heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item1").transform.name).gameObject;
-        //if(heldObject == null)
-        //{
-        //    heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item2").transform.name).gameObject;
-        //    if(heldObject == null)
-        //    {
-        //        heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item3").transform.name).gameObject;
-        //        if(heldObject == null)
-        //        {
-        //            heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item4").transform.name).gameObject;
-        //            if(heldObject == null)
-        //            {
-        //                heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item5").transform.name).gameObject;
-        //                if(heldObject == null)
-        //                {
-        //                    heldObject = holdObject.transform.Find(GameObject.FindGameObjectWithTag("Item6").transform.name).gameObject;
-        //                }
-                        
-        //            }
-
-        //        }
-
-        //    }
-
-        //}
-
-
     }
 
     public void DestroyKey()
